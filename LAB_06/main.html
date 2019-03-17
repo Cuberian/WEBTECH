@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="javascript.js"></script>  
+    <div class="main_form">
+       <h1>Случайный массив</h1>
+       <p id="quan">Число элементов массива: <input type ="text" id="el_quantity" onkeypress="allow()"></p>
+       <button onClick="create_massive();f_min();f_max(); f_sum(); f_neg(); f_pos(); sorting()" id="button" disabled="true">Создать массив</button>
+       <p id="mass">Исходный массив: <input type="text" id="massive"></p>
+       <fieldset id="detect">
+           <legend>Определить</legend>
+           <p><input type="checkbox" onClick="f_min()" id ="min">Минимальный элемент <input type="text" id="r_min"></p>
+           <p><input type="checkbox" onClick="f_max()" id="max">Максимальный элемент <input type="text" id="r_max"></p>
+           <p><input type="checkbox" onClick="f_sum()" id="sum">Сумма элементов <input type="text" id="r_sum"></p>
+           <p><input type="checkbox" onClick="f_neg()" id="neg">Число отрицательных <input type="text" id="r_neg"></p>
+           <p><input type="checkbox" onClick="f_pos()" id="pos">Число не отрицательных <input type="text" id="r_pos"></p>
+       </fieldset>
+       <fieldset id="sort">
+        <legend>Сортировать</legend>
+        <p><input type="radio" onClick="sorting()" id="m_sort0" name="m_sort">По убыванию</p>
+        <p><input type="radio" onClick="sorting()" id="m_sort1" name="m_sort">По возрастанию </p>
+        <p><input type="radio" onClick="sorting()" id="m_sort2" name="m_sort">без сортировки</p>
+    </fieldset>
+    <p id="res">Отсортированный массив: <input type ="text" id="result"></p>
+    </div>
+</body>
+
+</html>

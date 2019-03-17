@@ -1,0 +1,7 @@
+.main_form
+{
+    position: relative;
+    height: 400px;
+    width: 500px;
+    border-radius: 5px solid;
+}

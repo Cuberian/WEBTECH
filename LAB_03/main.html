@@ -1,0 +1,93 @@
+<html>
+<head>
+    <link rel= "stylesheet" href="style.css">
+</head>
+<body>
+<script language = "javascript">
+function allow()
+{
+var con=document.getElementById('quantity').value;
+if(con.length < 0)
+{
+document.getElementById('process').disabled=true;
+} 
+else
+document.getElementById('process').disabled=false;
+}
+function processing(){
+var arr1 = [8.5,10];
+var arr2 = [10,11.5];
+var arr3 = [15.5,17];
+var tarr = [];
+result =0;
+image = document.getElementsByName('image');
+paper = document.getElementsByName('paper');
+for(i=0;i<image.length;i++)
+{
+if(image[0].checked){
+tarr=arr1;
+for(i=0;i<paper.length;i++){
+if (paper[i].checked) 
+{
+result+=tarr[i];
+}
+}
+}
+if(image[1].checked){
+tarr=arr2;
+for(i=0;i<paper.length;i++){
+if (paper[i].checked) 
+{
+result+=tarr[i];
+}
+}
+}
+if(image[2].checked){
+tarr=arr3;
+for(i=0;i<paper.length;i++){
+if (paper[i].checked) 
+{
+result+=tarr[i];
+}
+}
+}
+}
+if(document.getElementById("image").checked == false && document.getElementById("image1").checked == false && document.getElementById("image2").checked == false)
+{
+ alert("вы не выбрали значение в графе 'Формат'");
+  return false;  
+}
+  if(document.getElementById("paper1").checked == false && document.getElementById("paper2").checked == false)
+{
+ alert("вы не выбрали значение в графе 'Бумага'");
+  return false;  
+}
+quantity = document.getElementById("quantity").value;
+if (isNaN(quantity)) {alert("в поле 'Количество' введено не число");return false;}
+end = result*quantity;
+document.getElementById("result").innerHTML = "<p>Цена фотографии: <strong>"+result+" р.</strong></p>"+"<p>Количество: <strong>"+quantity+" шт.</strong></p>"+"<p>Сумма заказа: <strong>"+end+" р.</strong></p>";
+}
+</script> 
+<div class = "main_form">
+        <fieldset class="images">
+            <legend>Формат</legend>
+                <p><input type ="radio" name="image" id="image"> 9x12</p>
+                <p><input type ="radio" name="image" id="image1"> 10x15</p>
+                <p><input type ="radio" name="image" id="image2"> 18x24</p>
+        </fieldset>
+        <fieldset class="papers">
+            <legend>Бумага</legend>
+            <p><input type ="radio" name="paper" id="paper1"> Матовая</p>
+            <p><input type ="radio" name="paper" id="paper2"> Глянцевая</p>
+        </fieldset>
+    <div class="quantity">
+                <p>Количество <input type="text" id = "quantity" onkeypress="allow()"></p>
+    </div>
+    <div>
+                <input type="button" id="process" onclick="processing()" value="Рассчитать" disabled="true">
+    </div>
+    <div id="result">
+    </div>
+</div>
+</body>    
+</html>

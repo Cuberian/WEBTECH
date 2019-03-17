@@ -1,0 +1,73 @@
+.main_form
+{
+    position: relative;
+    height: 430px;
+    width: 480px;
+    border-radius: 15px;
+    margin: 0 auto;
+    top: 25%;
+    color: white;
+    box-shadow: 0 0 10px rgba(1,1,1,1);
+    padding: 10px;
+    background:linear-gradient(to top, #b3ce82, #6e9148);
+}
+h1
+{
+    text-align: center;
+    color: white;
+}
+#out_cor
+{
+    position:relative;
+    left:7px;
+}
+#tsum 
+{
+    position: relative;
+
+}
+#sum 
+{
+    position: relative;
+    left: 45px;
+}
+#enter
+{
+    position: relative;
+    height:180px;
+    width: 180px;
+    left: 230px;
+    top:-70px;
+}
+
+#result
+{
+    position:relative; 
+    height: 100px;
+    width: 400px;
+    top: -120px;
+    border: 2px solid brown;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+}
+#result p
+{
+    text-align: center;
+    padding-top:-10px;
+    font-size: 14pt;
+    font-family: sans-serif;
+}
+#process
+{
+    position: relative;
+    left: 250px;
+    top:-100px
+}
+#reset_form
+{
+    position: relative;
+    left: 80px;
+    top:-100px
+}

@@ -1,0 +1,25 @@
+<html>
+<head>
+    <link rel= "stylesheet" href="style.css">
+</head>
+<body>
+<script src ="javascript.js"></script>
+<div class = "main_form">
+   <h1>Работа с датами</h1>
+   <fieldset id="field">
+       <legend>Определить</legend>
+        <p><input type="radio" name="quan"  id="q_days"> Количество дней</p>
+        <p><input type="radio" name="quan"  id="q_holidays"> Количество выходных</p>
+        <p><input type="radio" name="quan"  id="q_workdays"> Количество рабочих дней</p>
+        <p><input type="radio" name="quan"  id="q_weeks"> Количество полных недель</p>
+        <p><input type="radio" name="quan"  id="q_months"> Количество полных месяцев</p>
+   </fieldset>
+   <p>Результат <input type="text" id="result"></p>
+   <button onClick="f_days()">Вычислить</button>
+   <div id="date">
+   <p>Начало периода <input type="text" id="first_date"></p>
+   <p>Конец периода <input type="date" id="last_date"></p>
+    </div>
+</div>
+</body>    
+</html>

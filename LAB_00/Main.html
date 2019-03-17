@@ -1,0 +1,109 @@
+<html>
+<head><title>Анкета</title>
+<link rel ="stylesheet" href="styless.css">
+</head>
+<body>
+<script language="JavaScript">
+function vyvod()
+{
+    surname = document.anketa.Surname.value;
+    name = document.anketa.Name.value;
+    age = anketa.Age.options[anketa.Age.selectedIndex].value;
+    if(document.anketa.expirience[0].checked)
+     expirience = "Зарегестрированный покупатель";
+    if(document.anketa.expirience[1].checked)
+    expirience = "Пользуется услугами магазина впервые";
+    var arr2 =[];
+    var m = 0;
+    if(document.anketa.another.value !="")
+    Another = document.anketa.another.value;
+    else
+    Another="";
+    var arr = ["Книги", "Музыка на CD","Программное обеспечение","Канцелярские товары","Сувениеры"];
+    for(i=0,j=0;i<5;i++)
+        {
+    if(document.anketa.interest[i].checked)
+        {
+        arr2[j] = arr[i];
+        j++;
+        }
+        }
+    comment = document.anketa.comment.value;
+     if(document.anketa.Surname.value === "")
+    {
+        alert("Заполните пустое поле: Фамилия");
+        return false;
+    }
+    if(document.anketa.Name.value === "")
+    {
+        alert("Заполните пустое поле: Имя");
+        return false;
+    }
+    if(document.anketa.expirience[1].checked == false && document.anketa.expirience[0].checked == false)
+        {
+        alert("Выберете один из вариантов в пункте: Я");
+        return false;
+        }
+    if(anketa.interest[0].checked==false&&anketa.interest[1].checked==false&&anketa.interest[2].checked==false&&anketa.interest[3].checked==false&&anketa.interest[4].checked==false&&document.anketa.another.value === "")
+        {
+             alert("Выберете интерес или внесите другой");
+        return false;
+        }
+    document.write("<h1 style='font-family:sans-serif;text-align:center; color:red;'>Информация о покупателе</h1>")
+    document.write("<body bgcolor=#fcfa6a>");
+    document.write("<div style='background-color:#fffec9;border:10px solid white; font-family:sans-serif; font-size:14pt; margin:0 auto;height:550px; width: 600px; text-align:justify;'>");
+    document.write("<div style='padding-left:40px;padding-top:30px;'>");
+document.write("<p style='padding-bottom:10px;'>Фамилия:<font color='blue'><strong>"+surname+"</strong></font></p>");
+document.write("<p style='padding-bottom:10px;'>Имя: <font color='blue'><strong>"+name +"</strong></font><br>");
+document.write("<p style='padding-bottom:10px;'>Возрастная группа: <font color='blue'><strong>"+age +"</strong></font></p>");
+    document.write("<p style='padding-bottom:10px;'><font color='blue'><strong>"+expirience+"</strong></font><br>");
+document.write("<p style='padding-bottom:10px;'><u>Товары, представляющие интерес:"+"</u></p>");
+for(i=0;i<arr2.length;i++)
+        {
+    document.write("<li style='padding-left: 40px;padding-bottom:0px;margin-bottom:0px;'>"+arr2[i]+"</li>");
+        }
+    if(Another!="")
+    document.write("<li style='padding-left: 40px;padding-bottom:0px;margin-bottom:0px;'>"+Another+"</li>");
+    else
+        delete Another;
+    document.write("<p style='padding-top:30px;'><u>Пожелание покупателя:</u> "+"<p style='text-align:center;color:blue;'><strong>"+comment+"</strong></p></p>");
+     document.write("</div>");
+    document.write("</div>");
+}
+    </script>
+<form name = "anketa">
+<h3>Анкета покупателя</h3> 
+<div class="text">
+<p>1.Фамилия: <input type="text" name="Surname"></p>
+    <p>2.Имя:  <input type="text" name="Name"></p>
+    <p>3.Возврат </p>
+    <select name = "Age">
+        <option value="До 18 лет">До 18 лет</option>
+         <option value="От 18 до 25 лет">От 18 до 25 лет</option>
+         <option value="От 25 до 50 лет">От 25 до 50 лет</option>
+         <option value="После 50 лет">После 50 лет</option>
+    </select><br>
+    <p>4.Я:</p>
+    <div class="radio">
+<input type="radio" name ="expirience" value="register">Зарегестрированный пользователь<br>
+<input type="radio" name ="expirience" value="unregister">Впервые пользуюсь услугами магазина<br>
+    </div>
+    <p>5. Меня интересуют:</p>
+    <div class="checkbox">
+<input type ="checkbox" name="interest">Книги<br>
+<input type ="checkbox" name="interest">Музыка на CD<br>
+<input type ="checkbox" name="interest">Программное обеспечение<br>
+<input type ="checkbox" name="interest">Канцелярские товары<br>
+<input type ="checkbox" name="interest">Сувениры 
+<p class="another">Другое:<input type="text" name="another"></p>
+         </div>
+    <p>6.Мои пожелания и рекомендации:</p>
+</div>
+<textarea cols="40" rows="6" name = "comment"></textarea>
+<br>
+ 
+    <button onClick="vyvod()" value="Обработка формы" class="analize_form">Обработка формы</button>
+    <input type="button" name="reset_form" value="Очистка формы" onclick="this.form.reset();">
+   
+</form>
+</body>

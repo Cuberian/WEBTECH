@@ -1,0 +1,89 @@
+<html>
+<head>
+    <link rel= "stylesheet" href="style.css">
+</head>
+<body>
+<script language = "javascript">
+    function processing()
+    {
+        var sign=["RUB","EU","USD","GBR","YEN","UAN","GRV"];
+        var course = document.getElementById('course').value;
+        var summ = document.getElementById('sum').value;
+        course = course.replace(",",".");
+        if(isNaN(course)){alert('В поле Курс введено не число или лишний символ разделителя дробной части'); return false;}
+        if(isNaN(summ)){alert('В поле Переводимая сумма введено не число'); return false;}
+        j= document.getElementById("in_currency").selectedIndex;
+        osign=sign[j];
+        for(i=0;i<sign.length;i++)
+            {
+                if(document.getElementById("out_currency").selectedIndex == i)
+                    {
+                        tsign=sign[i];
+                    }
+            }
+
+            if(document.getElementById("out_currency").selectedIndex == document.getElementById("in_currency").selectedIndex)
+            {
+                alert("Одинаковые валюты");
+                return 0;
+            }
+        fresult=summ/course;
+        fresult = fresult.toFixed(2);
+        document.getElementById('result').innerHTML="<p> Перевод: "+osign+"-"+tsign+" по курсу "+course+"</p><p>"+"К выдаче: "+fresult+tsign+"</p>";
+    }
+    function allow()
+    {
+        var course = document.getElementById('course').value;
+        var summ = document.getElementById('sum').value;
+        if(course.length!=0 && summ.length!=0)
+        {
+            document.getElementById('process').disabled=false;
+        }
+        else
+        {
+            document.getElementById('process').disabled=true;
+        }
+    }
+    function allow1()
+    {
+        if(document.getElementById("out_currency").selectedIndex == document.getElementById("in_currency").selectedIndex)
+        {document.getElementById('course').disabled=true;}
+        else {document.getElementById('course').disabled=false;}
+    }
+</script> 
+<div class = "main_form">
+    <form>
+                <h1>Валютный калькулятор</h1>
+    <div id="cor">
+                <p id="in_cor">Из: <select id="in_currency"name = "in_currency">
+                    <option value="Рубли">Рубли</option>
+                    <option value="Евро">Евро</option>
+                    <option value="Доллар">Доллар</option>
+                    <option value="Фунт стерлингов">Фунт стерлингов</option>
+                    <option value="Японская йена">Японская йена</option>
+                    <option value="Китайский юань">Китайский юань</option>
+                    <option value="Украинская гривна">Украинская гривна</option>
+    </select></p>
+                <p id="out_cor">В: <select id="out_currency" name = "out_currency" onchange="allow1()">
+                    <option value="Рубли">Рубли</option>
+                    <option value="Евро">Евро</option>
+                    <option value="Доллар">Доллар</option>
+                    <option value="Фунт стерлингов">Фунт стерлингов</option>
+                    <option value="Японская йена">Японская йена</option>
+                    <option value="Китайский юань">Китайский юань</option>
+                    <option value="Украинская гривна">Украинская гривна</option>
+    </select></p>
+        </div>
+        <div id="enter">
+                <p id="crs">Курс: <input type ="text" name="course" onkeypress="allow()"  disabled="true" id="course"></p>
+                <p id="tsum">Переводимая сумма: <input type ="text" onkeypress="allow()" id ="sum" name="sum"></p>
+            </div>
+        
+    <div id="result">
+    </div>
+        <input type="button" id="process" onClick="processing()" disabled="true" value="Посчитать">
+        <input type="button" id="reset_form" value="Очистить" onclick="this.form.reset();">
+</form>
+</div>
+</body>    
+</html>

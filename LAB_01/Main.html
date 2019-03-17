@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>LAB_02</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script language="JavaScript">
+function processing()
+{
+var result = document.getElementsByid("result");
+}
+function show(){
+Date = document.main_form.date.value;
+if(Date === "")
+    {
+        alert("Заполните пустое поле: Дата");
+        return false;
+    }
+Pressure = main_form.pressure.options[main_form.pressure.selectedIndex].value;
+    if(parseInt(Pressure)<750)
+        Weather="Ненастье";
+    else
+        Weather="Ясно";
+result.style.display = "block";
+setTimeout(function(){
+	result.style.height = "200px";
+    document.getElementById("result").innerHTML = "<p id = 'res1' style='opacity:0;transition:2s;'> Сегодня: <strong style='color:red;'>"+Date+"</strong></p>"+ "<p id = 'res2' style='opacity:0;transition:2.5s;'> Показания барометра: <strong style='color:red;'>"+Pressure+" mmHg</strong></p>"+"<p id = 'res3' style='opacity:0;transition:3s;'>Прогноз погоды: <strong style='color:red;'>"+Weather+"</strong></p>";
+    setTimeout(function(){
+    res1.style.opacity="1";
+    res2.style.opacity="1";
+    res3.style.opacity="1";
+    },60);
+},60);
+}
+
+</script>
+<div class="main_form">
+<form name="main_form">
+<div class = "text">
+<h1>Погода сегодня</h1>
+<p>Дата:</p>
+<div class="date">
+<input type="date" name="date">
+</div>
+<p>Атмосферное давление:</p>
+<div class="pressure">
+<select name="pressure">
+<option value="740">740 mmHg</option>
+<option value="745">745 mmHg</option>
+<option value="750">750 mmHg</option>
+<option value="755">755 mmHg</option>
+<option value="760">760 mmHg</option>
+<option value="770">770 mmHg</option>
+</select>
+<div class="processing">
+<h3><input type="button" name="processing_form" value="Обработка формы" onclick="show();processing()"></h3>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div id="result">
+</div>
+</body>
+</html>

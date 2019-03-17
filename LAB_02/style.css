@@ -1,0 +1,55 @@
+.main_form
+{
+position: relative;
+background-color: #ffc400;
+width: 500px;
+height: 360px;
+border: 2px solid;
+border-radius: 5px;
+margin: 0 auto;
+top:10%;
+}
+#but
+{
+   position: relative;
+   left: 200px;
+   top:40px;
+}
+p
+{
+position: relative;
+font-family: sans-serif;
+font-size:16pt;
+left: 50px;
+}
+h1
+{
+ text-align: center;  
+color:#9a1fff;
+}
+#length
+{
+    position: relative;
+    left:100px;
+}
+#price
+{
+    position: relative;
+     left:17px;
+}
+#consumption
+{
+    position: relative;
+     left:30px;
+}
+#result
+{
+    position: relative;
+     left:155px;
+}
+.line
+{
+    width:80%;
+}
+
+

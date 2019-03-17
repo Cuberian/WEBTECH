@@ -1,0 +1,41 @@
+form{
+    background-color: gray;
+    border-radius: 5px;
+    height: 560px;
+    width: 360px;
+    margin: 0 auto;
+}
+.text
+{
+    padding-left:20px;
+}
+.text p
+{padding-bottom: 0px;
+margin-bottom: 0px;
+}
+h3
+{
+    text-align: center;
+    padding-top: 10px;
+}
+textarea
+{
+margin-left: 30px;
+}
+.analize_form
+{
+margin-top: 20px;
+margin-left: 50px;
+}
+.radio
+{
+    margin-left:30px;
+}
+.checkbox
+{
+    margin-left:30px;
+}
+.another
+{
+margin-top: 0px;
+}

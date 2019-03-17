@@ -1,0 +1,68 @@
+<html>
+<head><title>Анкета</title>
+<link rel ="stylesheet" href="style.css">
+</head>
+<body>
+<script language="JavaScript">
+function allow()
+{
+    var len=document.getElementById('length').value;
+    var pri=document.getElementById('price').value;
+    var con=document.getElementById('consumption').value;
+    if((len.length < 1) && (pri.length < 1 ) && (con.length < 1))
+    {
+        document.getElementById('but').disabled=true;
+    } else
+        document.getElementById('but').disabled=false;
+}
+function processing()
+{
+     var len=document.getElementById('length').value;
+    var pri=document.getElementById('price').value;
+    var con=document.getElementById('consumption').value;
+    if(len === "")
+    {
+        alert("Заполните пустое поле: Расстояние");
+        return false;
+    }
+    if(pri === "")
+    {
+        alert("Заполните пустое поле: Цена бензина");
+        return false;
+    }
+    if(con === "")
+    {
+        alert("Заполните пустое поле: Потребление");
+        return false;
+    }
+    if (isNaN(len)) {alert('в поле Расстояние введено не число');return false;} 
+    if (isNaN(pri)) {alert('в поле Цена бензина введено не число');return false;} 
+    if (isNaN(con)) {alert('в поле Потребление введено не число');return false;} 
+    var result = len/100*pri*con;
+    document.getElementById("result").value = result;
+}
+</script>
+<body>
+<div class="main_form">
+<form name="main_form">
+<div class = "text">
+<h1>Поездка на дачу</h1>
+<hr class="line">
+<p>Расстояние(км.):
+<input type="text" name="length" id="length" onchange="allow()">
+</p>
+<p>Цена бензина(руб./литр):
+<input type="text" name="price" id="price" onchange="allow()">
+</p>
+<p>Потребление(на 10км.):
+<input type="text" name="consumption" id="consumption" onchange="allow()">
+</p>
+<p>Cтоимость:
+<input type="text" name="result" id="result"disabled="true">
+</p>
+<input type="button" name="processing_form" id="but" value="Обработка формы" disabled="true" onclick="processing()">
+<hr class="line">
+</div>
+</form>
+</div>
+</body>

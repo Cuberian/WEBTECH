@@ -1,0 +1,57 @@
+.main_form
+{
+    position: relative;
+    height: 430px;
+    width: 480px;
+    border-radius: 15px;
+    margin: 0 auto;
+    top: 25%;
+    box-shadow: 0 0 10px rgba(1,1,1,1);
+    padding: 10px;
+    background:linear-gradient(to top, #b3ce82, #6e9148);
+}
+#result
+{
+    position:relative; 
+    height: 100px;
+    width: 300px;
+    top: 20px;
+    border: 2px solid brown;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+}
+fieldset
+{
+  height: 270px;
+   width: 200px;
+    color: white;
+}
+
+legend
+{
+color: white;
+    font-family: sans-serif;
+}
+#result p
+{
+    text-align: center;
+    padding-top:-10px;
+    font-size: 28pt;
+    font-family: sans-serif;
+}
+#process
+{
+    position: relative;
+    left: 200px;
+    top:10px
+}
+#image
+{
+    position: relative;
+    height: 200px;
+    width:200px;
+    top:-380px;
+    left: 250px;
+}

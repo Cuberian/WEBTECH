@@ -1,0 +1,69 @@
+<html>
+<head>
+    <link rel= "stylesheet" href="style.css">
+</head>
+<body>
+<script language = "javascript">
+    function processing()
+    {
+    var val = [369,349,189,179,299,149,199];
+    var img =["форель.jpeg","телятина.jpeg","суп.jpeg","рулет.jpeg","пицца.jpeg","коктель.jpeg","грейфрут.jpeg"];
+    menu = document.getElementsByName('menu');
+    result = 0;
+    for(i=0;i<menu.length;i++)
+        {
+            if(menu[i].checked)
+                {
+                    result+=val[i];
+                    document.getElementById('image').innerHTML="<img src ="+"'"+img[i]+"'"+" width=200 height=200>";
+                }
+        }
+            
+
+         document.getElementById('result').innerHTML="<p>Итого: " + result+"р.</p>";
+    }
+  function allow()
+    {
+        menu = document.getElementsByName('menu');
+        if(menu[0].checked == false&&menu[1].checked == false&&menu[2].checked == false&&menu[3].checked == false&&menu[4].checked == false&&menu[5].checked == false&&menu[6].checked == false)
+            {
+                alert("Не выбраны блюда");
+                return false;
+            }
+        else
+        {
+            var res=["форель", "телятина", "суп", "рулет", "пицца", "кокотель", "грейфрут"];
+            var res1 =[];
+            j=0;
+            for(i=0;i<menu.length;i++)
+            {
+                if(menu[i].checked == true)
+                {
+                    res1[j]=res[i];
+                    j++;
+                }
+            }
+            alert("Ваш заказ:\n"+res1.join("\n"));
+        }
+    }
+</script> 
+<div class = "main_form">
+        <fieldset class="menu">
+            <legend>МЕНЮ</legend>
+                <p><input type ="checkbox" onclick="processing()" name="menu">Фаршированная форель</p>
+                <p><input type ="checkbox" onclick="processing()" name="menu">Телятина под соусом</p>
+                <p><input type ="checkbox" onclick="processing()" name="menu">Крем-суп из шампиньонов</p>
+                <p><input type ="checkbox" onclick="processing()" name="menu">Рулет со шпинатов</p>
+                <p><input type ="checkbox" onclick="processing()" name="menu">Пицца Гавайская</p>
+                <p><input type ="checkbox" onclick="processing()" name="menu">Ванильный коктель</p>
+                <p><input type ="checkbox" onclick="processing()" name="menu"> Напиток Грейфрут</p>
+        </fieldset>
+    <div>
+                <input type="button" id="process" onClick="allow()" value="Заказать">
+    </div>
+    <div id="result">
+    </div>
+    <div id="image"></div>
+</div>
+</body>    
+</html>

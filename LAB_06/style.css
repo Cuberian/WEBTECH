@@ -1,0 +1,52 @@
+.main_form
+{
+position: relative;
+height: 500px;
+width: 630px;
+border-radius: 15px;
+margin: 0 auto;
+top: 25%;
+box-shadow: 0 0 10px rgba(1,1,1,1);
+color: white;
+font-family: sans-serif;
+padding: 10px;
+background:linear-gradient(to top, #b3ce82, #6e9148);
+}
+h1
+{
+    text-align: center;
+    color:white;
+    font-family: sans-serif;
+}
+#detect
+{
+    width: 330px;
+}
+#detect input
+{
+    width:60px;
+}
+#sort 
+{
+    position: relative;
+    left: 400px;
+    top:-240px;
+    width:200px;
+}
+#res
+{
+    position: relative;
+    top: -150px;
+}
+#res input
+{
+    width: 300px;
+}
+#quan input
+{
+    width: 50px;
+}
+#mass input
+{
+    width: 300px;
+}

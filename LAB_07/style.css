@@ -1,0 +1,27 @@
+.main_form
+{
+    position: relative;
+    height: 430px;
+    width: 540px;
+    border-radius: 15px;
+    margin: 0 auto;
+    top: 25%;
+    color: white;
+    box-shadow: 0 0 10px rgba(1,1,1,1);
+    padding: 10px;
+    background:linear-gradient(to top, #b3ce82, #6e9148);
+}
+h1
+{
+    text-align: center;
+}
+#field
+{
+    width: 230px;
+}
+#date
+{
+    position: relative;
+    left: 300px;
+    top: -310px;
+}

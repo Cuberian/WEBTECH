@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="photo.css">
+	<title></title>
+</head>
+<body>
+	<div class="main">
+		<h1>Печать фотографий</h1>
+		<form name = "photo">
+			<div class="flex">
+			<fieldset class="format">
+			<legend>Формат</legend>
+				<p><input type="radio" id="radio1" name="radio">9x12</p>
+				<p><input type="radio" id="radio2" name="radio">10x15</p>
+				<p><input type="radio" id="radio3" name="radio">18x24</p>
+			</fieldset>
+
+			<fieldset class="paper">
+			<legend>Бумага</legend>			
+				<p><input type="radio" id="matt" name="paper"> Матовая</p>
+				<p><input type="radio" id="glossy" name="paper">Глянцевая</p>
+			</fieldset>
+			</div>
+
+			<div class="num_but">
+				<p>Количество<input type="text" name="number" onkeypress="check()"><div id="p"></div></p>
+				<div class="but"><input type="button" name="sum" value="Вычислить" onClick="count()"> 
+					<input type="reset"  value="Обновить"></div>
+			</div>
+			<div class="last">
+				<textarea name = "ttt" id = "ttt" cols="45" rows="6"></textarea>
+			</div>
+
+		</form>
+	</div>
+<script>
+	function count(){
+	var	priceM = [8.5, 10, 15.5],
+	priceG = [10, 11.5,17],
+	number = document.photo.number.value,
+	radio = document.getElementsByName('radio'),
+	paper = document.getElementsByName('paper'),
+	i,
+	result = 0;
+	for( i=0; i<paper.length;i++){
+		if(paper[0].checked){
+	
+	for(i=0; i<radio.length;i++){
+		if (radio[i].type == "radio" && radio[i].checked) {
+			result+=priceM[i];
+			result=number*result;
+            document.getElementById("ttt").value ="Цена фотографии: "+priceM[i]+"р."+ "\n" +
+        "Количество " + number +"шт."+ "\n" + "Сумма заказа: "+ result +"р.";
+		}
+	}
+	}
+	else{
+		for(i=0; i<radio.length;i++){
+		if (radio[i].type == "radio" && radio[i].checked) {
+			result+=priceG[i];
+			result=number*result;
+            document.getElementById("ttt").value ="Цена фотографии: "+priceG[i]+"р."+"\n"+
+        "Количество: " + number +"шт."+ "\n" +"Сумма заказа: "+ result +"р.";
+        
+		}
+	  }
+	}
+  }
+}
+
+function check(){
+	var number = document.photo.number.value;
+	if(number.length<0 || isNaN(number)){
+		document.getElementById('p').innerHTML="Ошибка, введите число";
+	}
+	else{
+		document.getElementById('p').innerHTML="";
+	}
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
